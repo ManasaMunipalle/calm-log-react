@@ -1,13 +1,26 @@
-function Welcome({ name }) {
+function Welcome({ name, setPage }) {
   return (
     <div style={styles.container}>
+      
+      {/* Profile Icon */}
+      <div style={styles.topBar}>
+        <span
+          style={styles.profileIcon}
+          onClick={() => setPage("profile")}
+        >
+          👤
+        </span>
+      </div>
+
       <h2 style={styles.greeting}>Bonjour {name}</h2>
+
       <p style={styles.message}>
-        Today is a good day to be kind to yourself 🌱
+        Today is a beautiful day to grow gently 🌿
       </p>
     </div>
   );
 }
+
 
 export default Welcome;
 
@@ -28,5 +41,15 @@ const styles = {
   message: {
     fontSize: "1.1rem",
     color: "#333"
-  }
+  },
+  topBar: {
+  display: "flex",
+  justifyContent: "flex-end"
+},
+
+profileIcon: {
+  cursor: "pointer",
+  fontSize: "1.5rem"
+},
+
 };
