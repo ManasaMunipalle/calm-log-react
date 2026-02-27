@@ -1,0 +1,98 @@
+/* Full screen center layout */
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glass card */
+.auth-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 45px 35px;
+  border-radius: 18px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.auth-card h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Inputs */
+.auth-card input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.auth-card input:focus {
+  border-color: #5fbf8f;
+  box-shadow: 0 0 0 2px rgba(95, 191, 143, 0.2);
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Primary button */
+.primary-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #44ced8;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #53dce6;
+  transform: translateY(-2px);
+}
+
+/* Secondary button */
+.secondary-btn {
+  padding: 12px;
+  border: 1px solid #52c5df;
+  border-radius: 10px;
+  background: transparent;
+  color: #4c94a1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background: rgba(95, 191, 143, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

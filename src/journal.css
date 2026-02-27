@@ -1,0 +1,50 @@
+.journal-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.mood-selector {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.mood-emoji {
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.6;
+}
+
+.mood-emoji:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.mood-emoji.selected {
+  transform: scale(1.3);
+  opacity: 1;
+}
+
+.journal-textarea {
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 10px;
+  background: transparent;
+}
+
+.save-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}

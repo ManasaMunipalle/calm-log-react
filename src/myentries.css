@@ -1,0 +1,70 @@
+.entries-container {
+  padding: 2rem;
+}
+
+.entries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.entries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.entry-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.entry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.entry-date {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.entry-preview {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.back-button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: #f2f2f2;
+  transition: 0.2s ease;
+}
+
+.back-button:hover {
+  background: #e6e6e6;
+}
+
+.empty-message {
+  font-style: italic;
+  color: #666;
+}
+.highlight-date {
+  background: #5fbf8f !important;
+  color: white !important;
+  border-radius: 50%;
+}
