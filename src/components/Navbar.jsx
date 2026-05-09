@@ -1,32 +1,45 @@
 import { supabase } from "../supabaseClient";
-import Profile from "../pages/Profile"; // make sure this is imported
+import Profile from "../pages/Profile";
 
-function Navbar({ setPage }) {
+function Navbar({ setPage, activePage }) {
   async function handleLogout() {
     await supabase.auth.signOut();
   }
 
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "15px 30px",
-      }}
-    >
-      {/* LEFT SIDE */}
-      <div style={{ display: "flex", gap: 10 }}>
-        <button onClick={() => setPage("journal")}>Journal</button>
-        <button onClick={() => setPage("entries")}>My Entries</button>
-      </div>
+  const tabs = [
+    { id: "journal", label: "✏️ Journal" },
+    { id: "entries", label: "📖 Entries" },
+    { id: "heatmap", label: "📅 Heatmap" },
+    { id: "progress", label: "✨ Progress" },
+  ];
 
-      {/* RIGHT SIDE */}
-      <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
-        <Profile />
-        <button onClick={handleLogout}>Logout</button>
-      </div>
-    </div>
+  return (
+    <>
+      <header className="navbar">
+        <div className="navbar-brand">
+          <span className="navbar-logo">🌿</span>
+          <span className="navbar-title">Calm Log</span>
+        </div>
+        <div className="navbar-right">
+          <Profile />
+          <button className="btn btn-ghost btn-sm" onClick={handleLogout}>
+            Sign Out
+          </button>
+        </div>
+      </header>
+
+      <nav className="tab-nav">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={`tab-btn ${activePage === tab.id ? "active" : ""}`}
+            onClick={() => setPage(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </nav>
+    </>
   );
 }
 
