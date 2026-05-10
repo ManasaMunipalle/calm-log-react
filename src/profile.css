@@ -47,3 +47,23 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.color-empty {
+  fill: #eeeeee;
+}
+
+.color-happy {
+  fill: #4caf50;
+}
+
+.color-neutral {
+  fill: #ffeb3b;
+}
+
+.color-sad {
+  fill: #2196f3;
+}
+
+.color-angry {
+  fill: #f44336;
+}

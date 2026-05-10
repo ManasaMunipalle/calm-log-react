@@ -68,3 +68,31 @@
   color: white !important;
   border-radius: 50%;
 }
+.selected-date {
+  border: 2px solid #4a90e2 !important;
+}
+
+.mood-happy {
+  background-color: #a8e6cf !important;
+  border-radius: 8px;
+}
+
+.mood-sad {
+  background-color: #a0c4ff !important;
+  border-radius: 8px;
+}
+
+.mood-angry {
+  background-color: #ffadad !important;
+  border-radius: 8px;
+}
+
+.mood-neutral {
+  background-color: #ffd3b6 !important;
+  border-radius: 8px;
+}
+
+.mood-calm {
+  background-color: #d0f4de !important;
+  border-radius: 8px;
+}
