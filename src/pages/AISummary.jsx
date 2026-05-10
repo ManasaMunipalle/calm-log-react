@@ -25,15 +25,20 @@ function AISummary({ user }) {
     }
 
     try {
-      const { data, error: fnError } = await supabase.functions.invoke("ai-summary", {
+      const { data } = await supabase.functions.invoke("ai-summary", {
         body: { entries },
       });
 
-      if (fnError) throw new Error(fnError.message);
-      setSummary(data.summary);
+      if (data?.error) {
+        setError(`${data.error}`);
+      } else if (data?.summary) {
+        setSummary(data.summary);
+      } else {
+        setError(`Unexpected response: ${JSON.stringify(data)}`);
+      }
     } catch (err) {
-      setError("Could not generate summary. Make sure the AI function is deployed and your Anthropic key is set.");
-      console.error(err);
+      console.error("Summary error:", err);
+      setError(`Error: ${err.message}`);
     }
 
     setLoading(false);

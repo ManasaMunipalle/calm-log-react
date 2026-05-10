@@ -13,8 +13,6 @@ function App() {
 
     const { data: listener } = supabase.auth.onAuthStateChange(
       (_, session) => {
-          console.log("Auth state changed:", session);
-
         setSession(session);
       }
     );
