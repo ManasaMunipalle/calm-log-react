@@ -1,7 +1,6 @@
 # Calm React App
 Live Demo:
-https://manasamunipalle.github.io/calm-react-app/
-
+https://manasamunipalle.github.io/calm-log-react/
 
 # React + Vite
 
